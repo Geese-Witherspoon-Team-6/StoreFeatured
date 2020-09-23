@@ -1,0 +1,30 @@
+{
+  "name": "qtsy_proxy",
+  "version": "1.0.0",
+  "description": "qtsy proxy for brian hauck / store featured",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spaceasterisk/qtsy_proxy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spaceasterisk/qtsy_proxy/issues"
+  },
+  "homepage": "https://github.com/spaceasterisk/qtsy_proxy#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.6",
+    "react": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.44.2"
+  }
+}
