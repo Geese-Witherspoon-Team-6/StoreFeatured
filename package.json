@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./server/index.js"
+    "start": "nodemon ./server/index.js",
+    "seed": "node ./database/seedDatabase.js"
   },
   "repository": {
     "type": "git",

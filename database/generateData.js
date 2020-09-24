@@ -20,7 +20,7 @@ var genSellers = function(x) {
     var sellerItem = {
       imageUrl: 'tbd',
       name: faker.company.companyName(),
-      createdAt: faker.date.month(),
+      createdAt: faker.date.past(),
       totalSales: faker.finance.amount(),
       location: faker.address.city(),
     }
@@ -29,6 +29,7 @@ var genSellers = function(x) {
   return sellerObjects
 };
 
-// var productFakes = genProducts(100);
+var productFakes = genProducts(100);
 var sellerFakes = genSellers(100);
 console.log(sellerFakes)
+console.log(productFakes)
