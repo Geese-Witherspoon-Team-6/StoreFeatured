@@ -29,7 +29,9 @@ var genSellers = function(x) {
   return sellerObjects
 };
 
-var productFakes = genProducts(100);
-var sellerFakes = genSellers(100);
-console.log(sellerFakes)
-console.log(productFakes)
+// var productFakes = genProducts(100);
+// var sellerFakes = genSellers(100);
+// console.log(sellerFakes)
+// console.log(productFakes)
+
+module.exports.genSellers = genSellers;

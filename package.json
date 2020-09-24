@@ -4,7 +4,7 @@
   "description": "qtsy proxy for brian hauck / store featured",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "nodemon ./server/index.js",
     "seed": "node ./database/seedDatabase.js"
   },
@@ -32,6 +32,7 @@
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
+    "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
     "css-loader": "^4.3.0",
     "jest": "^26.4.2",

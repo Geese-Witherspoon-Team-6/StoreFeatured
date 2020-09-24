@@ -1,5 +1,7 @@
 import React from 'react';
 import reactDOM from'react-dom';
+import Seller from './Seller.jsx'
+import ProductList from './ProductList.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -10,8 +12,13 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h1>This is the React App File!</h1>
+      <div id="mainContainer">
+        <div id="seller">
+          <Seller />
+        </div>
+        <div id="productBox">
+          <ProductList />
+        </div>
       </div>
     )
   }
