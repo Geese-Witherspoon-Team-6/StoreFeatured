@@ -27,7 +27,7 @@ let Product = mongoose.model('Product', productSchema);
 let Seller = mongoose.model('Seller', sellerSchema);
 
 
-var loadSeedData = function() {
+var loadSeedData = function(closeDB) {
   var iD = 1;
   db.once('open', () => {
     _.map(seeds.seedProducts, (product) => {
@@ -63,6 +63,9 @@ var loadSeedData = function() {
       iD++
     })
   })
+  closeDB();
 };
 
-loadSeedData();
+loadSeedData(() => {
+  db.close()
+});
