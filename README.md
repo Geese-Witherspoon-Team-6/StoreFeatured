@@ -38,3 +38,9 @@ TBA
 ```sh
 npm run seed
 ```
+### Start Server & Webpack:
+
+```sh
+npm start
+npx webpack
+```
