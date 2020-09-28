@@ -4,9 +4,12 @@ import _ from 'lodash';
 
 function ProductList(props) {
   return (
-    <div id="product">
-      <Products />
+    <div id="productBox">
+      <div id="product">
+        <Products />
+      </div>
     </div>
+
   )
 }
 
