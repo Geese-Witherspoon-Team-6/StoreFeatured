@@ -38,3 +38,9 @@ html {
   margin: 4px;
   border: 1px solid gray;
 }
+
+img {
+  height: auto;
+  width: auto;
+  max-height: 200px;
+}

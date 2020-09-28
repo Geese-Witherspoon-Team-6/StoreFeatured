@@ -4,14 +4,14 @@ function Products(props) {
   return (
     <div className="prod-square">
       <div className="prod-img">
-        product image
+        <img src={props.productDetail.imageUrl}/>
       </div>
       <div className="prod-text">
         <div className="prod-title">
-          product title
+          <h3>{props.productDetail.name}</h3>
         </div>
         <div className="prod-price">
-          product price
+          {`Price: $${props.productDetail.price}`}
         </div>
       </div>
     </div>

@@ -19,8 +19,8 @@ app.use(bodyparser());
 app.use(express.static(__dirname + '/../client/dist'));
 
 app.get('/api/seller', (req, res) => {
-  mongo.getSeller(req.body.sellerName, (info) => {
-    res.status(200).send(info)
+  mongo.getSeller(req.query.sellerName, (info) => {
+    res.send(info)
+    res.end();
   })
-  res.end();
 })
