@@ -1,10 +1,12 @@
 import React from 'react';
+import moment from 'moment';
+moment().format();
 
 class Seller extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      value: null,
+      seller: null,
     }
   }
 
@@ -13,21 +15,21 @@ class Seller extends React.Component {
     return (
       <div>
         <div>
-          <p>Seller Logo</p>
+          <img src={this.props.sellerInfo.imageUrl}/>
         </div>
         <div className="sell-title">
-          <p>Seller Name</p>
+          <h3>{this.props.sellerInfo.name}</h3>
         </div>
         <div className="sell-stats">
           <div className="sell-sales">
-            <p>Total Sales</p>
+            <p>{`Total Sales: $${this.props.sellerInfo.totalSales}`}</p>
           </div>
           <div className="sell-year">
-            <p>Year Joined</p>
+            <p>{`Joined: ${moment(this.props.sellerInfo.createdAt).fromNow()}`}</p>
           </div>
         </div>
         <div className="sell-location">
-          <p>Location</p>
+          <p>{`Location: ${this.props.sellerInfo.location}`}</p>
         </div>
       </div>
     )

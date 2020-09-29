@@ -28,12 +28,11 @@ let Product = mongoose.model('Product', productSchema);
 let Seller = mongoose.model('Seller', sellerSchema);
 
 
-var getSeller = function(sellername, info) {
+var getSeller = function(sellername, success) {
   Seller.find({name: sellername})
     .populate("products")
     .then((result) => {
-      console.log('POPULATE RESULT ---------')
-      console.log(result)
+      success(result)
     })
     .catch((err) => {
       console.error(err)

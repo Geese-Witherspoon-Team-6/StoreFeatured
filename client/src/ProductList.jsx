@@ -5,11 +5,17 @@ import _ from 'lodash';
 function ProductList(props) {
   return (
     <div id="productBox">
-      <div id="product">
-        <Products />
-      </div>
+      {
+        _.map(props.products, (product) => {
+          console.log(product)
+          return (
+            <div id="product">
+              <Products productDetail={product}/>
+            </div>
+          )
+        })
+      }
     </div>
-
   )
 }
 
