@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import reactDOM from'react-dom';
 import Seller from './Seller.jsx';
 import ProductList from './ProductList.jsx';
 import axios from 'axios';
 import styled from 'styled-components';
+// eslint-disable-next-line no-unused-vars
 import regeneratorRuntime from 'regenerator-runtime';
 
 const SellerStyle = styled.section`
@@ -43,23 +43,11 @@ function App() {
       <Container>
           <SellerStyle>
             <div>
-              {
-                data.products === undefined ? (
-                  <>Loading...</>
-                ) : (
-                  <Seller sellerInfo={data}/>
-                )
-              }
+              <Seller sellerInfo={data}/>
             </div>
           </SellerStyle>
         <div>
-          {
-            data === null ? (
-              <>Loading...</>
-            ) : (
-              <ProductList products={data.products}/>
-            )
-          }
+          <ProductList products={data.products}/>
         </div>
       </Container>
     </div>

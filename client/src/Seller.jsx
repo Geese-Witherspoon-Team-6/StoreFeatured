@@ -1,16 +1,21 @@
 import React from 'react';
 import moment from 'moment';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 moment().format();
 
-function Seller(props) {
+const Logo = styled.img`
+  border-radius: 10px;
+  max-width: 150px;
+`;
 
+const Seller = (props) => {
 
     return (
       <div>
         <div>
-          <img src={props.sellerInfo.imageUrl}/>
+          <Logo src={props.sellerInfo.imageUrl} />
         </div>
         <div className="sell-title">
           <h3>{props.sellerInfo.name}</h3>
@@ -28,6 +33,13 @@ function Seller(props) {
         </div>
       </div>
     )
+};
+
+Seller.propTypes = {
+  sellerInfo: PropTypes.object,
+};
+Seller.defaultProps = {
+  sellerInfo: null,
 };
 
 export default Seller;

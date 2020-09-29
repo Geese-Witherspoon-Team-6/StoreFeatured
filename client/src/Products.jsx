@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Title = styled.h3`
     color:palevioletred;
   `;
 
-function Products(props) {
+const Products = (props) => {
   const [count, setCount] = useState(0);
   useEffect(() => {
     document.title = `You clicked ${count} times`;
   });
-
-
 
   return (
     <div className="prod-square">
@@ -31,6 +30,13 @@ function Products(props) {
       <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
   )
-}
+};
+
+Products.propTypes = {
+  productDetail: PropTypes.object,
+};
+Products.defaultProps = {
+  productDetail: null,
+};
 
 export default Products;
