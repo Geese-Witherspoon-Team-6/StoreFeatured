@@ -3,6 +3,23 @@ import reactDOM from'react-dom';
 import Seller from './Seller.jsx';
 import ProductList from './ProductList.jsx';
 import axios from 'axios';
+import styled from 'styled-components';
+
+const SellerStyle = styled.section`
+  padding: 4px;
+  margin: 4px;
+  border: 1px solid gray;
+  width: 35%;
+`;
+
+const Container = styled.section`
+  padding: 4px;
+  margin: 4px;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+`;
 
 class App extends React.Component {
   constructor(props) {
@@ -36,25 +53,29 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="mainContainer">
-        <div id="seller">
-        {
-          this.state.seller === null ? (
-            <>Loading...</>
-          ) : (
-            <Seller sellerInfo={this.state.seller}/>
-          )
-        }
-        </div>
-        <div>
-        {
-          this.state.products === null ? (
-            <>Loading...</>
-          ) : (
-            <ProductList products={this.state.products}/>
-          )
-        }
-        </div>
+      <div>
+        <Container>
+            <SellerStyle>
+              <div>
+                {
+                  this.state.seller === null ? (
+                    <>Loading...</>
+                  ) : (
+                    <Seller sellerInfo={this.state.seller}/>
+                  )
+                }
+              </div>
+            </SellerStyle>
+          <div>
+          {
+            this.state.products === null ? (
+              <>Loading...</>
+            ) : (
+              <ProductList products={this.state.products}/>
+            )
+          }
+          </div>
+        </Container>
       </div>
     )
   }
