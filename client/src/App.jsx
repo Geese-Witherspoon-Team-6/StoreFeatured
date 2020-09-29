@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import reactDOM from'react-dom';
 import Seller from './Seller.jsx';
 import ProductList from './ProductList.jsx';
 import axios from 'axios';
 import styled from 'styled-components';
+import regeneratorRuntime from 'regenerator-runtime';
 
 const SellerStyle = styled.section`
   padding: 4px;
@@ -22,66 +23,47 @@ const Container = styled.section`
   justify-content: space-evenly;
 `;
 
-const testValue = null;
+function App() {
+  const [data, setData] = useState({});
 
-class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      seller:null,
-      products: null,
-    }
-  }
-
-
-  componentDidMount() {
-      axios.get('/api/seller', {
+  useEffect(() => {
+    async function fetchData() {
+      const result = await axios('/api/seller', {
         params: {
           sellerName: 'Mincing Mockingbird'
         }
-      })
-        .then((response) => {
-          let sellerInfo = response.data[0];
-          let productList = response.data[0].products;
-          console.log(productList)
-          this.setState({
-            seller: sellerInfo,
-            products: productList
-          })
-        })
-        .catch((error) => {
-          console.log(error)
-        })
-  }
+      });
+      setData(result.data[0])
+    }
+    fetchData();
+  }, [/*watched variables to run hook again on updates: e.g. new search query*/])
 
-  render() {
-    return (
-      <div>
-        <Container>
-            <SellerStyle>
-              <div>
-                {
-                  this.state.seller === null ? (
-                    <>Loading...</>
-                  ) : (
-                    <Seller sellerInfo={this.state.seller}/>
-                  )
-                }
-              </div>
-            </SellerStyle>
-          <div>
+  return (
+    <div>
+      <Container>
+          <SellerStyle>
+            <div>
+              {
+                data.products === undefined ? (
+                  <>Loading...</>
+                ) : (
+                  <Seller sellerInfo={data}/>
+                )
+              }
+            </div>
+          </SellerStyle>
+        <div>
           {
-            this.state.products === null ? (
+            data === null ? (
               <>Loading...</>
             ) : (
-              <ProductList products={this.state.products}/>
+              <ProductList products={data.products}/>
             )
           }
-          </div>
-        </Container>
-      </div>
-    )
-  }
+        </div>
+      </Container>
+    </div>
+  )
 }
 
 export default App;

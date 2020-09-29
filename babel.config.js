@@ -7,6 +7,7 @@ module.exports = {
         targets: {
           node: 'current',
         },
+        useBuiltIns: 'entry'
       },
     ],
     ['@babel/preset-react'],
