@@ -8,6 +8,11 @@
     "start": "nodemon ./server/index.js",
     "seed": "node ./database/seedDatabase.js"
   },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/spaceasterisk/qtsy_proxy.git"
@@ -40,6 +45,7 @@
     "babel-plugin-styled-components": "^1.11.1",
     "css-loader": "^4.3.0",
     "jest": "^26.4.2",
+    "react-test-renderer": "^16.13.1",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   }
