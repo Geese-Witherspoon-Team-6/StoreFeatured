@@ -12,15 +12,26 @@ const Main = styled.section`
   margin: 10px;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(53, 53, 99);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: stretch;
+`;
+
+const Background = styled.section`
+  height: 50px;
+  width: 99.2%;
+  background: url(https://qtsy-cropped.s3-us-west-2.amazonaws.com/qtsy_background.png) no-repeat center;
 `;
 
 const Container = styled.section`
   padding: 4px;
   margin: 4px;
+  margin-top: 0px !important;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  min-height: 450;
+  min-height: 500;
   background-color: #f8ebe6;
 `;
 
@@ -52,6 +63,9 @@ const App = () => {
 
   return (
     <Main>
+      <Background>
+
+      </Background>
       <Container>
           <SellerStyle>
             <div>

@@ -8,6 +8,8 @@ moment().format();
 const SellerStyle = styled.section`
   font-family: 'Antic Slab', serif;
   color: black;
+  margin: 4px;
+  padding: 4px;
 `;
 
 const Logo = styled.img`

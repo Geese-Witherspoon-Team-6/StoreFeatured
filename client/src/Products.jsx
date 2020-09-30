@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Price = styled.p`
-    color:black;
-    margin: 1px;
-    padding: 1px;
-    font-size: 16px;
-    font-family: 'Open Sans', sans-serif;
-  `;
+  color:black;
+  margin: 1px;
+  padding: 1px;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+`;
 
 const Title = styled.p`
   color:black;
