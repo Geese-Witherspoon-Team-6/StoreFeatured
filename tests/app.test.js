@@ -1,22 +1,11 @@
-
 import React from 'react';
-import _ from 'lodash';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import sample from './sample.js';
 import axios from 'axios';
-// import renderer from 'react-test-renderer';
-import app, { fetchData } from './app.jsx';
-import ProductList from '../client/src/ProductList.jsx';
+import { fetchData } from './app.jsx';
 import Products from '../client/src/Products.jsx';
 import Seller from '../client/src/Seller.jsx';
-// import {cleanup, fireEvent} from '@testing-library/react';
-
-// import Enzyme from 'enzyme';
-// import Adapter from 'enzyme-adapter-react-16';
-
-// Enzyme.configure({ adapter: new Adapter() });
-
 
 describe('jest framework is functional', () => {
   test('jest is working', () => {
