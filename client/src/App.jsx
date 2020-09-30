@@ -23,18 +23,19 @@ const Container = styled.section`
   justify-content: space-evenly;
 `;
 
-function App() {
+const App = () => {
   const [data, setData] = useState({});
 
+  const fetchData = async function() {
+    const result = await axios('/api/seller', {
+      params: {
+        sellerName: 'Mincing Mockingbird'
+      }
+    });
+    setData(result.data[0])
+  }
+
   useEffect(() => {
-    async function fetchData() {
-      const result = await axios('/api/seller', {
-        params: {
-          sellerName: 'Mincing Mockingbird'
-        }
-      });
-      setData(result.data[0])
-    }
     fetchData();
   }, [/*watched variables to run hook again on updates: e.g. new search query*/])
 
@@ -43,7 +44,7 @@ function App() {
       <Container>
           <SellerStyle>
             <div>
-              <Seller sellerInfo={data}/>
+              <Seller seller={data}/>
             </div>
           </SellerStyle>
         <div>

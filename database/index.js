@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-var seeds = require('./seedData.js')
-var _ = require('lodash');
 mongoose.connect('mongodb://localhost/qtsy', { useNewUrlParser: true });
 const db = mongoose.connection;
 
@@ -24,6 +22,7 @@ let sellerSchema = mongoose.Schema({
   products: [{type: Number, ref: 'Product'}]
 })
 
+// eslint-disable-next-line no-unused-vars
 let Product = mongoose.model('Product', productSchema);
 let Seller = mongoose.model('Seller', sellerSchema);
 

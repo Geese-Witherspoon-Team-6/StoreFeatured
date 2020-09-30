@@ -34,4 +34,5 @@ var genSellers = function(x) {
 // console.log(sellerFakes)
 // console.log(productFakes)
 
+module.exports.genProducts = genProducts;
 module.exports.genSellers = genSellers;

@@ -10,36 +10,40 @@ const Logo = styled.img`
   max-width: 150px;
 `;
 
+const SellerName = styled.h2`
+  color: palevioletred;
+`;
+
 const Seller = (props) => {
 
     return (
       <div>
         <div>
-          <Logo src={props.sellerInfo.imageUrl} />
+          <Logo src={props.seller.imageUrl} />
         </div>
-        <div className="sell-title">
-          <h3>{props.sellerInfo.name}</h3>
+        <div>
+          <SellerName>{props.seller.name}</SellerName>
         </div>
-        <div className="sell-stats">
-          <div className="sell-sales">
-            <p>{`Total Sales: $${props.sellerInfo.totalSales}`}</p>
+        <div>
+          <div>
+            <p>{`Total Sales: $${props.seller.totalSales}`}</p>
           </div>
-          <div className="sell-year">
-            <p>{`Joined: ${moment(props.sellerInfo.createdAt).fromNow()}`}</p>
+          <div>
+            <p>{`Joined: ${moment(props.seller.createdAt).fromNow()}`}</p>
           </div>
         </div>
-        <div className="sell-location">
-          <p>{`Location: ${props.sellerInfo.location}`}</p>
+        <div>
+          <p>{`Location: ${props.seller.location}`}</p>
         </div>
       </div>
     )
 };
 
 Seller.propTypes = {
-  sellerInfo: PropTypes.object,
+  seller: PropTypes.object,
 };
 Seller.defaultProps = {
-  sellerInfo: null,
+  seller: null,
 };
 
 export default Seller;

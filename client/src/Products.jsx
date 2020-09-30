@@ -7,27 +7,22 @@ const Title = styled.h3`
   `;
 
 const Products = (props) => {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    document.title = `You clicked ${count} times`;
-  });
 
   return (
-    <div className="prod-square">
-      <div className="prod-img">
+    <div>
+      <div>
         <img src={props.productDetail.imageUrl}/>
       </div>
-      <div className="prod-text">
-        <div className="prod-title">
+      <div>
+        <div>
           <Title>
             {props.productDetail.name}
           </Title>
         </div>
-        <div className="prod-price">
+        <div>
           {`Price: $${props.productDetail.price}`}
         </div>
       </div>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
   )
 };

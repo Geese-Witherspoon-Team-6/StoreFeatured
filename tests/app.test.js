@@ -1,59 +1,87 @@
+
 import React from 'react';
-import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
-import App from '../client/src/App.jsx';
+import _ from 'lodash';
+import { render, unmountComponentAtNode } from 'react-dom';
+import { act } from 'react-dom/test-utils';
+import sample from './sample.js';
+import axios from 'axios';
+// import renderer from 'react-test-renderer';
+import app, { fetchData } from './app.jsx';
 import ProductList from '../client/src/ProductList.jsx';
 import Products from '../client/src/Products.jsx';
 import Seller from '../client/src/Seller.jsx';
-import {cleanup, fireEvent, render} from '@testing-library/react';
+// import {cleanup, fireEvent} from '@testing-library/react';
 
-import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+// import Enzyme from 'enzyme';
+// import Adapter from 'enzyme-adapter-react-16';
 
-Enzyme.configure({ adapter: new Adapter() });
+// Enzyme.configure({ adapter: new Adapter() });
 
-test('two plus two is four', () => {
-  expect(2 + 2).toBe(4);
+
+describe('jest framework is functional', () => {
+  test('jest is working', () => {
+    const data = {one: 1};
+    data['two'] = 2;
+    expect(data).toEqual({one: 1, two: 2});
+  });
 });
 
-test('object assignment', () => {
-  const data = {one: 1};
-  data['two'] = 2;
-  expect(data).toEqual({one: 1, two: 2});
+let container = null;
+beforeEach(() => {
+  // setup a DOM element as a render target
+  container = document.createElement("div");
+  document.body.appendChild(container);
 });
 
-// test('something on the App component', () => {
-//   const component = renderer.create(
-//     <App />,
-//   );
-//   let tree = component.toJSON();
-//   expect(tree).toMatchSnapshot();
+afterEach(() => {
+  // cleanup on exiting
+  unmountComponentAtNode(container);
+  container.remove();
+  container = null;
+});
 
-//   tree.componentDidMount();
-//   tree = component.toJSON();
-//   expect(tree).toMatchSnapshot();
-// });
+describe('components render with props', () => {
+  it('renders Seller component with sample data passed in as props', () => {
+    act(() => {
+      render(<Seller seller={sample.sellerObject}/>, container);
+    });
+    expect(container.textContent).toBe(sample.sellerText);
 
-// it('renders Seller component', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<Seller />, div);
-// })
+    act(() => {
+      let sellerObject2 = sample.sellerObject;
+      sellerObject2.location = 'Nebraska';
+      render(<Seller seller={sellerObject2} />, container);
+    });
+    expect(container.textContent).toBe(sample.sellerText2);
+  });
 
-// const successResult = [
-//   {
-//     products: [ [Object], [Object], [Object] ],
-//     _id: 1,
-//     imageUrl: 'https://qtlyimages.s3-us-west-2.amazonaws.com/logoSquare2.png',
-//     name: 'Mincing Mockingbird',
-//     createdAt: '2020-06-09T18:12:50.773Z',
-//     totalSales: 311.29,
-//     location: 'Port Adolf',
-//     __v: 0
-//   }
-// ];
+  it('renders Product component with sample data passed in as props', () => {
+    act(() => {
+      render(<Products productDetail={sample.productInfo} />, container);
+    });
+    let productText = 'FishPrice: $973.21'
+    expect(container.textContent).toBe(productText);
+  });
+});
 
-// const getSuccess = jest.fn(() => Promise.resolve(successResult));
-// // const getFail = jest.fm(() => Promise.reject(new Error()));
-// const { getByLabelText, queryByLabelText } = render(<Seller sellerInfo={getSuccess} />);
-// const labelBeforeGet = queryByLabelText(/display/i);
-// expect(labelBeforeGet).toBeNull();
+jest.mock('axios');
+
+describe('fetches data via axios', () => {
+  it('fetches successfully data from an API', async () => {
+    const data = sample.fakeSeller;
+
+    axios.get.mockImplementationOnce(() => Promise.resolve(data));
+
+    await expect(fetchData()).resolves.toEqual(data);
+  });
+
+  it('fetches erroneously data from an API', async () => {
+    const errorMessage = 'Network Error';
+
+    axios.get.mockImplementationOnce(() =>
+      Promise.reject(new Error(errorMessage)),
+    );
+
+    await expect(fetchData()).rejects.toThrow(errorMessage);
+  });
+});
