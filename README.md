@@ -44,3 +44,8 @@ npm run seed
 npm start
 npx webpack
 ```
+### Run Tests
+
+```sh
+npm test
+```
