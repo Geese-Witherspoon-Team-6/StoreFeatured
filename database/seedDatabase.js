@@ -37,7 +37,7 @@ var loadSeedData = function(closeDB) {
       let newProduct = new Product({
         _id: iD,
         sellerId: iD,
-        imageUrl: images.birdImages[bird],
+        imageUrl: images.birds[bird],
         price: product.price,
         name: product.name
       })
@@ -47,7 +47,7 @@ var loadSeedData = function(closeDB) {
         }
       })
       iD++
-      if (bird < 46) {
+      if (bird < 27) {
         bird++
       } else {
         bird = 0;
@@ -62,7 +62,7 @@ var loadSeedData = function(closeDB) {
         createdAt: seller.createdAt,
         totalSales: seller.totalSales,
         location: seller.location,
-        products: [iD]
+        products: [iD, iD + 1, iD + 2, iD + 3, iD + 4, iD + 5, iD + 6, iD + 7]
       })
       newSeller.save((err) => {
         if (err) {
