@@ -1,6 +1,10 @@
 import React from 'react';
 import moment from 'moment';
+import styled from 'styled-components';
+
 moment().format();
+
+
 
 class Seller extends React.Component {
   constructor(props) {
@@ -9,7 +13,6 @@ class Seller extends React.Component {
       seller: null,
     }
   }
-
 
   render() {
     return (
