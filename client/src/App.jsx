@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Seller from './Seller.jsx';
 import ProductList from './ProductList.jsx';
-import Products from './Products.jsx';
 import axios from 'axios';
 import styled from 'styled-components';
 // eslint-disable-next-line no-unused-vars
