@@ -48,7 +48,7 @@ describe('components render with props', () => {
     act(() => {
       render(<Products productDetail={sample.productInfo} />, container);
     });
-    let productText = 'FishPrice: $973.21'
+    let productText = 'Fish$973.21'
     expect(container.textContent).toBe(productText);
   });
 });
