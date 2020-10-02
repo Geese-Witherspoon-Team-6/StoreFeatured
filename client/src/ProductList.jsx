@@ -1,7 +1,6 @@
 import React from 'react';
 import Products from './Products.jsx';
 import _ from 'lodash';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { ProductContainer, ProductMax, ProductBox } from './Styles.jsx'
 

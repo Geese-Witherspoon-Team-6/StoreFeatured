@@ -1,6 +1,5 @@
 import React from 'react';
 import moment from 'moment';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { SellerStyle2, Logo, SellerName, Stats, StatsHolder} from './Styles.jsx'
 

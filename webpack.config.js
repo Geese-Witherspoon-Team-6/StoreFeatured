@@ -2,7 +2,7 @@ var path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: ['@babel/polyfill', './client/src/index.jsx'],
+  entry: ['@babel/polyfill', './client/src/index.js'],
   watch: true,
   watchOptions: {
     aggregateTimeout: 600,

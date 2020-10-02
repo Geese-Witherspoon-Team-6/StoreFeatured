@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Seller from './Seller.jsx';
 import ProductList from './ProductList.jsx';
 import axios from 'axios';
-import styled from 'styled-components';
 // eslint-disable-next-line no-unused-vars
 import regeneratorRuntime from 'regenerator-runtime';
 import {Main, Background, Container, SellerStyle} from './Styles.jsx'
+import Button from 'react-bootstrap/Button';
 
 const App = () => {
   const [data, setData] = useState({});
