@@ -5,7 +5,6 @@ import axios from 'axios';
 // eslint-disable-next-line no-unused-vars
 import regeneratorRuntime from 'regenerator-runtime';
 import {Main, Background, Container, SellerStyle} from './Styles.jsx'
-import Button from 'react-bootstrap/Button';
 
 const App = () => {
   const [data, setData] = useState({});
@@ -29,11 +28,10 @@ const App = () => {
 
       </Background>
       <Container>
-          <SellerStyle>
             <div>
               <Seller seller={data}/>
             </div>
-          </SellerStyle>
+
             <div>
               <ProductList products={data.products}/>
             </div>

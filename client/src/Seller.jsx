@@ -1,33 +1,37 @@
 import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import { SellerStyle2, Logo, SellerName, Stats, StatsHolder} from './Styles.jsx'
+import {
+  SellerStyle, Logo, SellerName, StatsHolder, Sales, Year, SalesText, YearText, LocationText, Location, Company, MoreT, MoreB
+} from './Styles.jsx'
 
 moment().format();
-
+//{`${moment(props.seller.createdAt).fromNow()}`}
 const Seller = (props) => {
 
     return (
       <div>
-        <SellerStyle2>
-          <div>
+        <SellerStyle>
+          <Company>
+
             <Logo src={props.seller.imageUrl} />
-          </div>
-          <div>
+            <MoreT>More from</MoreT>
             <SellerName>{props.seller.name}</SellerName>
-          </div>
+            <MoreB>See all 479 items</MoreB>
+          </Company>
+
           <StatsHolder>
-            <div>
-              <Stats>{`${props.seller.totalSales}`}</Stats>
-            </div>
-            <div>
-              <Stats>{`${moment(props.seller.createdAt).fromNow()}`}</Stats>
-            </div>
+
+              <SalesText>Sales</SalesText>
+              <Sales>{`${props.seller.totalSales}`}</Sales>
+              <YearText>On Qtsy Since</YearText>
+              <Year>2004</Year>
+              <LocationText>Based in</LocationText>
+              <Location>{`${props.seller.location}`}</Location>
+
           </StatsHolder>
-          <div>
-            <Stats>{`${props.seller.location}`}</Stats>
-          </div>
-        </SellerStyle2>
+
+        </SellerStyle>
       </div>
     )
 };

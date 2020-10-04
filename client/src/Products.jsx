@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Price, Title, ProductImage } from './Styles.jsx';
+import { Price, Title, ProductImage, ProdImageHolder } from './Styles.jsx';
 
 const Products = (props) => {
 
   return (
     <div>
       <div>
-        <ProductImage src={props.productDetail.imageUrl}/>
+        <ProdImageHolder>
+          <ProductImage src={props.productDetail.imageUrl}/>
+        </ProdImageHolder>
       </div>
       <div>
         <div>
