@@ -5,39 +5,30 @@ import {ArrowRight} from '@styled-icons/fa-solid'
 export const Main = styled.section`
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(53, 53, 99);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-columns: 1fr 2fr;
   width: 100%;
   margin: 0px;
+  background-color: #f8ebe6;
 `;
 
 export const Background = styled.section`
-  height: 50px;
+  grid-area: 1 / 1 / span 1 / span 2;
   max-width: 100%;
   background: url(https://qtlyimages.s3-us-west-2.amazonaws.com/qtsy_background1900.png) no-repeat center;
-`;
-
-export const Container = styled.section`
-
-  margin-top: 0px !important;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  max-height: 855px;
-  background-color: #f8ebe6;
-  width: 100%;
 `;
 
 
 /* Seller.jsx */
 export const SellerStyle = styled.div`
+  grid-area: 2 / 1 / span 1 / span 1;
   display: grid;
   grid-template-rows: 1fr 2fr;
   grid-template-columns: 1fr;
   margin-top: 24px;
   margin-left: 24px;
   margin-right: 4px;
-  width: 333px;
 `;
 
 export const Company = styled.div`
@@ -153,21 +144,19 @@ export const Location = styled.div`
   color: #000000;
   letter-spacing: 0.35px;
   grid-area: 4 / 1 / span 1 / span 2;
-  align-self:start
+  align-self: start;
 `;
 
 /* ProductList.jsx */
 
 export const ProductMax = styled.div`
-  max-width: 850px;
+  grid-area: 2 / 2 / span 1 / span 1;
   padding: 4px;
   margin: 4px;
-  width: 97%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   grid-template-rows: repeat(6, 250px);
   grid-auto-flow: dense;
-
 `;
 
 export const ProductBox = styled.div`
@@ -181,7 +170,7 @@ export const ProductBox = styled.div`
   &:hover {
     background-color: white;
     box-shadow: -1px 1px 12px 1px rgba(0, 0, 0, 0.1);
-  }
+  };
 `;
 
 

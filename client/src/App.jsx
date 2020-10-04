@@ -4,7 +4,7 @@ import ProductList from './ProductList.jsx';
 import axios from 'axios';
 // eslint-disable-next-line no-unused-vars
 import regeneratorRuntime from 'regenerator-runtime';
-import {Main, Background, Container, SellerStyle} from './Styles.jsx'
+import {Main, Background} from './Styles.jsx'
 
 const App = () => {
   const [data, setData] = useState({});
@@ -27,7 +27,6 @@ const App = () => {
       <Background>
 
       </Background>
-      <Container>
             <div>
               <Seller seller={data}/>
             </div>
@@ -35,7 +34,6 @@ const App = () => {
             <div>
               <ProductList products={data.products}/>
             </div>
-      </Container>
     </Main>
   )
 }
