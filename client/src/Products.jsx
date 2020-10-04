@@ -14,7 +14,7 @@ const Products = (props) => {
       <div>
         <div>
           <Title>
-            {props.productDetail.name}
+            {`${props.productDetail.name.slice(0, 28)}...`}
           </Title>
         </div>
         <div>

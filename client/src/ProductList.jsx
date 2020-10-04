@@ -2,13 +2,12 @@ import React from 'react';
 import Products from './Products.jsx';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
-import { ProductContainer, ProductMax, ProductBox } from './Styles.jsx'
+import { ProductMax, ProductBox } from './Styles.jsx'
 
 const ProductList = props => {
 
   return (
     <div>
-      <ProductContainer>
         <ProductMax>
           {
             _.map(props.products, (product) => {
@@ -22,7 +21,6 @@ const ProductList = props => {
             })
           }
         </ProductMax>
-      </ProductContainer>
     </div>
   )
 };

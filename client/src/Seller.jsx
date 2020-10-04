@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import {
-  SellerStyle, Logo, SellerName, StatsHolder, Sales, Year, SalesText, YearText, LocationText, Location, Company, MoreT, MoreB
+  SellerStyle, Logo, SellerName, StatsHolder, Sales, Year, SalesText, YearText, LocationText, Location, Company, MoreT, MoreB, ArrowMore, MoreItems
 } from './Styles.jsx'
 
 moment().format();
@@ -17,7 +17,9 @@ const Seller = (props) => {
             <Logo src={props.seller.imageUrl} />
             <MoreT>More from</MoreT>
             <SellerName>{props.seller.name}</SellerName>
-            <MoreB>See all 479 items</MoreB>
+            <MoreItems>
+              <MoreB>See all 479 items</MoreB><ArrowMore size="13"/>
+            </MoreItems>
           </Company>
 
           <StatsHolder>

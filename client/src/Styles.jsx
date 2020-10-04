@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import {ArrowRight} from '@styled-icons/fa-solid'
 
   /* App.jsx */
 export const Main = styled.section`
@@ -8,7 +8,7 @@ export const Main = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
-
+  margin: 0px;
 `;
 
 export const Background = styled.section`
@@ -23,7 +23,7 @@ export const Container = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  max-height: 585px;
+  max-height: 855px;
   background-color: #f8ebe6;
   width: 100%;
 `;
@@ -44,6 +44,12 @@ export const Company = styled.div`
   grid-area: 1 / 1 / span 1 / span 1;
 `;
 
+export const MoreItems = styled.div`
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 2fr;
+`;
+
 export const MoreT = styled.div`
   font-size: 13px;
   color: #4a4a4a;
@@ -57,6 +63,18 @@ export const MoreB = styled.div`
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   margin: 0px 4px;
+  grid-area: 1 / 1 / span 1 / span 1;
+  align-self: center;
+`;
+
+export const ArrowMore = styled(ArrowRight)`
+  color: black;
+  grid-area: 1 / 2 / span 1 / span 1;
+  align-self: center;
+  justify-self: start;
+  &:hover {
+    transform: translateX(4px);
+  }
 `;
 
 export const Logo = styled.img`
@@ -139,21 +157,17 @@ export const Location = styled.div`
 `;
 
 /* ProductList.jsx */
-export const ProductContainer = styled.section`
-  padding: 4px;
-  margin: 4px;
-  width: 97%;
-
-`;
 
 export const ProductMax = styled.div`
-  max-width: 950px;
+  max-width: 850px;
   padding: 4px;
   margin: 4px;
   width: 97%;
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-rows: repeat(6, 250px);
+  grid-auto-flow: dense;
+
 `;
 
 export const ProductBox = styled.div`
@@ -191,7 +205,7 @@ export const ProductImage = styled.img`
 `;
 
 export const Title = styled.p`
-  margin-top: 15%;
+  margin-top: 8%;
   margin-bottom: 1px;
   padding: 1px;
   font-family: 'Roboto', sans-serif;
