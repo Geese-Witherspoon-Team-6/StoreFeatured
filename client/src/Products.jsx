@@ -1,43 +1,23 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
-
-const Price = styled.p`
-  color:black;
-  margin: 1px;
-  padding: 1px;
-  font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
-`;
-
-const Title = styled.p`
-  color:black;
-  margin: 1px;
-  padding: 1px;
-  font-size: 14px;
-  font-family: 'Raleway', sans-serif;
-`;
-
-const ProductImage = styled.img`
-  padding: 9px;
-  margin: 1px;
-  height: auto;
-  max-width: 150px;
-  background-color: white;
-`;
+import { Price, Title, ProductImage, ProdImageHolder, TitleContainer } from './Styles.jsx';
 
 const Products = (props) => {
 
   return (
     <div>
       <div>
-        <ProductImage src={props.productDetail.imageUrl}/>
+        <ProdImageHolder>
+          <ProductImage src={props.productDetail.imageUrl}/>
+        </ProdImageHolder>
       </div>
       <div>
         <div>
-          <Title>
-            {props.productDetail.name}
-          </Title>
+          <TitleContainer>
+            <Title>
+              {`${props.productDetail.name}`}
+            </Title>
+          </TitleContainer>
         </div>
         <div>
           <Price>

@@ -1,48 +1,38 @@
 import React from 'react';
 import moment from 'moment';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import {
+  SellerStyle, Logo, SellerName, StatsHolder, Sales, Year, SalesText, YearText, LocationText, Location, Company, MoreT, MoreB, ArrowMore, MoreItems
+} from './Styles.jsx'
 
 moment().format();
-
-const SellerStyle = styled.section`
-  font-family: 'Antic Slab', serif;
-  color: black;
-  margin: 4px;
-  padding: 4px;
-`;
-
-const Logo = styled.img`
-  border-radius: 10px;
-  max-width: 150px;
-`;
-
-const SellerName = styled.h2`
-  color: black;
-`;
-
+//{`${moment(props.seller.createdAt).fromNow()}`}
 const Seller = (props) => {
 
     return (
       <div>
         <SellerStyle>
-          <div>
+          <Company>
+
             <Logo src={props.seller.imageUrl} />
-          </div>
-          <div>
+            <MoreT>More from</MoreT>
             <SellerName>{props.seller.name}</SellerName>
-          </div>
-          <div>
-            <div>
-              <p>{`Total Sales: $${props.seller.totalSales}`}</p>
-            </div>
-            <div>
-              <p>{`Joined: ${moment(props.seller.createdAt).fromNow()}`}</p>
-            </div>
-          </div>
-          <div>
-            <p>{`Location: ${props.seller.location}`}</p>
-          </div>
+            <MoreItems>
+              <MoreB>See all 479 items</MoreB><ArrowMore size="13"/>
+            </MoreItems>
+          </Company>
+
+          <StatsHolder>
+
+              <SalesText>Sales</SalesText>
+              <Sales>{`${props.seller.totalSales}`}</Sales>
+              <YearText>On Qtsy Since</YearText>
+              <Year>2004</Year>
+              <LocationText>Based in</LocationText>
+              <Location>{`${props.seller.location}`}</Location>
+
+          </StatsHolder>
+
         </SellerStyle>
       </div>
     )
