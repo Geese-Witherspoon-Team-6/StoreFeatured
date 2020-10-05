@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Price, Title, ProductImage, ProdImageHolder } from './Styles.jsx';
+import { Price, Title, ProductImage, ProdImageHolder, TitleContainer } from './Styles.jsx';
 
 const Products = (props) => {
 
@@ -13,9 +13,11 @@ const Products = (props) => {
       </div>
       <div>
         <div>
-          <Title>
-            {`${props.productDetail.name.slice(0, 28)}...`}
-          </Title>
+          <TitleContainer>
+            <Title>
+              {`${props.productDetail.name}`}
+            </Title>
+          </TitleContainer>
         </div>
         <div>
           <Price>

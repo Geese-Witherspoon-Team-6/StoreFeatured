@@ -9,10 +9,14 @@ import {Main, Background} from './Styles.jsx'
 const App = () => {
   const [data, setData] = useState({});
 
+  // const sellerIdentity = 'Mincing Mockingbird';
+  // let sellerIdentity = decodeURI(location.pathname).split('/')[1];
+  let sellerIdentity = 'Mincing Mockingbird';
+
   const fetchData = async function() {
-    const result = await axios('/api/seller', {
+    const result = await axios(`/api/seller/${sellerIdentity}`, {
       params: {
-        sellerName: 'Mincing Mockingbird'
+        sellID: sellerIdentity
       }
     });
     setData(result.data[0])
@@ -24,16 +28,13 @@ const App = () => {
 
   return (
     <Main>
-      <Background>
-
-      </Background>
-            <div>
-              <Seller seller={data}/>
-            </div>
-
-            <div>
-              <ProductList products={data.products}/>
-            </div>
+      <Background />
+      <div>
+        <Seller seller={data}/>
+      </div>
+      <div>
+        <ProductList products={data.products}/>
+      </div>
     </Main>
   )
 }

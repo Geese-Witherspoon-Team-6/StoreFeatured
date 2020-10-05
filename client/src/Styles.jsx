@@ -9,7 +9,6 @@ export const Main = styled.section`
   grid-template-rows: 50px 1fr;
   grid-template-columns: 1fr 2fr;
   width: 100%;
-  margin: 0px;
   background-color: #f8ebe6;
 `;
 
@@ -26,9 +25,7 @@ export const SellerStyle = styled.div`
   display: grid;
   grid-template-rows: 1fr 2fr;
   grid-template-columns: 1fr;
-  margin-top: 24px;
-  margin-left: 24px;
-  margin-right: 4px;
+  margin: 2rem;
 `;
 
 export const Company = styled.div`
@@ -36,24 +33,23 @@ export const Company = styled.div`
 `;
 
 export const MoreItems = styled.div`
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 2fr;
+  margin-top: 0.5rem;
+  display: flex;
+
 `;
 
 export const MoreT = styled.div`
-  font-size: 13px;
   color: #4a4a4a;
-  font-family: 'Roboto', sans-serif;
-  margin: 10px 4px 0px 4px;
+  font-family: 'Heebo', sans-serif;
+  font-size: 13.5px;
+  margin-top: 1rem;
 `;
 
 export const MoreB = styled.div`
-  font-size: 13px;
+  font-family: 'Heebo', sans-serif;
+  font-size: 13.5px;
   color: black;
-  font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  margin: 0px 4px;
   grid-area: 1 / 1 / span 1 / span 1;
   align-self: center;
 `;
@@ -65,21 +61,22 @@ export const ArrowMore = styled(ArrowRight)`
   justify-self: start;
   &:hover {
     transform: translateX(4px);
-  }
+  };
+  margin-left: 5px;
 `;
 
 export const Logo = styled.img`
   border-radius: 10px;
-  max-width: 136px;
+  max-width: 156px;
 `;
 
-export const SellerName = styled.p`
+export const SellerName = styled.div`
   color: black;
   font-size: 32px;
   font-family: 'Bitter', serif;
   letter-spacing: 0.35px;
   font-weight: 300;
-  margin: 2px 4px;
+  margin-top: 3px;
 `;
 
 export const StatsHolder = styled.div`
@@ -87,13 +84,13 @@ export const StatsHolder = styled.div`
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 3fr 1fr 3fr;
   grid-area: 2 / 1 / span 1 / span 1;
-  margin: 25px 4px 4px 4px;
   height: 150px;
+  margin-top: 2rem;
 `;
 
 export const SalesText = styled.div`
-font-family: 'Roboto', sans-serif;
-  font-size: 13px;
+  font-family: 'Heebo', sans-serif;
+  font-size: 13.5px;
   color: #595959;
   grid-area: 1 / 1 / span 1 / span 1;
   align-self: end;
@@ -110,12 +107,13 @@ export const Sales = styled.div`
 `;
 
 export const YearText = styled.div`
-  font-family: 'Open Sans', sans-serif;
-  font-size: 13px;
+  font-family: 'Heebo', sans-serif;
+  font-size: 13.5px;
   color: #595959;
   grid-area: 1 / 2 / span 1 / span 1;
   justify-self: start;
   align-self: end;
+  margin-left: 12px;
 `;
 
 export const Year = styled.div`
@@ -127,11 +125,12 @@ export const Year = styled.div`
   grid-area: 2 / 2 / span 1 / span 1;
   justify-self: start;
   align-self: start;
+  margin-left: 12px;
 `;
 
 export const LocationText = styled.div`
-  font-family: 'Open Sans', sans-serif;
-  font-size: 13px;
+  font-family: 'Heebo', sans-serif;
+  font-size: 13.5px;
   color: #595959;
   grid-area: 3 / 1 / span 1 / span 2;
   align-self: end;
@@ -151,18 +150,17 @@ export const Location = styled.div`
 
 export const ProductMax = styled.div`
   grid-area: 2 / 2 / span 1 / span 1;
-  padding: 4px;
-  margin: 4px;
+  justify-self: start;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-rows: repeat(6, 250px);
   grid-auto-flow: dense;
+  grid-gap: 0.5rem;
+  margin: 2rem 2rem 2rem 0rem;
 `;
 
 export const ProductBox = styled.div`
   grid-area: auto;
-  margin: 3px;
-  padding: 6px;
   max-height: 250px;
   max-width: 250px;
   border-radius: 8px;
@@ -171,6 +169,7 @@ export const ProductBox = styled.div`
     background-color: white;
     box-shadow: -1px 1px 12px 1px rgba(0, 0, 0, 0.1);
   };
+  padding: 8px;
 `;
 
 
@@ -193,22 +192,24 @@ export const ProductImage = styled.img`
   align-self: center;
 `;
 
-export const Title = styled.p`
-  margin-top: 8%;
-  margin-bottom: 1px;
-  padding: 1px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  color: black;
+export const TitleContainer = styled.div`
+  display: flex;
 `;
 
-export const Price = styled.p`
-  margin-top: 1px;
-  margin-bottom: 8px;
-  padding-top: 1px;
-  padding-bottom: 12px;
-  font-family: 'Roboto', sans-serif;
+export const Title = styled.div`
+  font-family: 'Heebo', sans-serif;
+  font-size: 13.5px;
+  font-weight: 300;
+  color: black;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0px;
+  margin-top: 10px;
+`;
+
+export const Price = styled.div`
+  font-family: 'Heebo', sans-serif;
   font-size: 16px;
   font-weight: 500;
   color: black;
