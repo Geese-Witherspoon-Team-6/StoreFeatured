@@ -2,48 +2,33 @@ import React from 'react';
 import moment from 'moment';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { SellerStyle2, Logo, SellerName, Stats, StatsHolder} from './Styles.jsx'
 
 moment().format();
-
-const SellerStyle = styled.section`
-  font-family: 'Antic Slab', serif;
-  color: black;
-  margin: 4px;
-  padding: 4px;
-`;
-
-const Logo = styled.img`
-  border-radius: 10px;
-  max-width: 150px;
-`;
-
-const SellerName = styled.h2`
-  color: black;
-`;
 
 const Seller = (props) => {
 
     return (
       <div>
-        <SellerStyle>
+        <SellerStyle2>
           <div>
             <Logo src={props.seller.imageUrl} />
           </div>
           <div>
             <SellerName>{props.seller.name}</SellerName>
           </div>
-          <div>
+          <StatsHolder>
             <div>
-              <p>{`Total Sales: $${props.seller.totalSales}`}</p>
+              <Stats>{`${props.seller.totalSales}`}</Stats>
             </div>
             <div>
-              <p>{`Joined: ${moment(props.seller.createdAt).fromNow()}`}</p>
+              <Stats>{`${moment(props.seller.createdAt).fromNow()}`}</Stats>
             </div>
-          </div>
+          </StatsHolder>
           <div>
-            <p>{`Location: ${props.seller.location}`}</p>
+            <Stats>{`${props.seller.location}`}</Stats>
           </div>
-        </SellerStyle>
+        </SellerStyle2>
       </div>
     )
 };
