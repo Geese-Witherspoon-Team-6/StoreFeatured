@@ -1,27 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-function Products(props) {
-  const Title = styled.h3`
+const Title = styled.h3`
     color:palevioletred;
   `;
+
+const Products = (props) => {
+
   return (
-    <div className="prod-square">
-      <div className="prod-img">
+    <div>
+      <div>
         <img src={props.productDetail.imageUrl}/>
       </div>
-      <div className="prod-text">
-        <div className="prod-title">
+      <div>
+        <div>
           <Title>
             {props.productDetail.name}
           </Title>
         </div>
-        <div className="prod-price">
+        <div>
           {`Price: $${props.productDetail.price}`}
         </div>
       </div>
     </div>
   )
-}
+};
+
+Products.propTypes = {
+  productDetail: PropTypes.object,
+};
+Products.defaultProps = {
+  productDetail: null,
+};
 
 export default Products;

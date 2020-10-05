@@ -1,42 +1,49 @@
 import React from 'react';
 import moment from 'moment';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 moment().format();
 
+const Logo = styled.img`
+  border-radius: 10px;
+  max-width: 150px;
+`;
 
+const SellerName = styled.h2`
+  color: palevioletred;
+`;
 
-class Seller extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      seller: null,
-    }
-  }
+const Seller = (props) => {
 
-  render() {
     return (
       <div>
         <div>
-          <img src={this.props.sellerInfo.imageUrl}/>
+          <Logo src={props.seller.imageUrl} />
         </div>
-        <div className="sell-title">
-          <h3>{this.props.sellerInfo.name}</h3>
+        <div>
+          <SellerName>{props.seller.name}</SellerName>
         </div>
-        <div className="sell-stats">
-          <div className="sell-sales">
-            <p>{`Total Sales: $${this.props.sellerInfo.totalSales}`}</p>
+        <div>
+          <div>
+            <p>{`Total Sales: $${props.seller.totalSales}`}</p>
           </div>
-          <div className="sell-year">
-            <p>{`Joined: ${moment(this.props.sellerInfo.createdAt).fromNow()}`}</p>
+          <div>
+            <p>{`Joined: ${moment(props.seller.createdAt).fromNow()}`}</p>
           </div>
         </div>
-        <div className="sell-location">
-          <p>{`Location: ${this.props.sellerInfo.location}`}</p>
+        <div>
+          <p>{`Location: ${props.seller.location}`}</p>
         </div>
       </div>
     )
-  }
+};
+
+Seller.propTypes = {
+  seller: PropTypes.object,
+};
+Seller.defaultProps = {
+  seller: null,
 };
 
 export default Seller;

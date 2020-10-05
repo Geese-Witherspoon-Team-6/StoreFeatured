@@ -41,9 +41,9 @@ var loadSeedData = function(closeDB) {
         price: product.price,
         name: product.name
       })
-      newProduct.save((err, newProduct) => {
+      newProduct.save((err) => {
         if (err) {
-          console.log(err)
+          console.error(err)
         }
       })
       iD++
@@ -64,9 +64,9 @@ var loadSeedData = function(closeDB) {
         location: seller.location,
         products: [iD]
       })
-      newSeller.save((err, newSeller) => {
+      newSeller.save((err) => {
         if (err) {
-          console.log(err)
+          console.error(err)
         }
       })
       iD++
