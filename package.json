@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "start": "nodemon ./server/index.js",
-    "seed": "node ./database/seedDatabase.js"
+    "seed": "node ./database/seedDatabase.js",
+    "build": "webpack --config webpack.config.js -d --watch"
   },
   "jest": {
     "transform": {
@@ -27,6 +28,7 @@
     "@styled-icons/fa-solid": "^10.22.0",
     "axios": "^0.20.0",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "faker": "^5.1.0",
     "lodash": "^4.17.20",

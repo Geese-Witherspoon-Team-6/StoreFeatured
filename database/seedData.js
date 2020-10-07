@@ -604,10 +604,10 @@ var seedProducts = [
 var seedSellers = [
   {
     imageUrl: 'tbd',
-    name: 'Abernathy, Buckridge and Hahn',
+    name: 'Mincing Mockingbird',
     createdAt: '2020-06-09T18:12:50.773Z',
-    totalSales: 311.29,
-    location: 'Port Adolf'
+    totalSales: 31129,
+    location: 'Newport Beach, California'
   },
   {
     imageUrl: 'tbd',

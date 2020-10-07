@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import {
@@ -6,8 +6,9 @@ import {
 } from './Styles.jsx'
 
 moment().format();
-//{`${moment(props.seller.createdAt).fromNow()}`}
+
 const Seller = (props) => {
+
 
     return (
       <div>
@@ -18,16 +19,16 @@ const Seller = (props) => {
             <MoreT>More from</MoreT>
             <SellerName>{props.seller.name}</SellerName>
             <MoreItems>
-              <MoreB>See all 479 items</MoreB><ArrowMore size="13"/>
+              <MoreB>{`See all 465 items`}</MoreB><ArrowMore size="13"/>
             </MoreItems>
           </Company>
 
           <StatsHolder>
 
               <SalesText>Sales</SalesText>
-              <Sales>{`${props.seller.totalSales}`}</Sales>
+              <Sales>{props.seller.totalSales}</Sales>
               <YearText>On Qtsy Since</YearText>
-              <Year>2004</Year>
+              <Year>{`${moment(props.seller.createdAt).year()}`}</Year>
               <LocationText>Based in</LocationText>
               <Location>{`${props.seller.location}`}</Location>
 

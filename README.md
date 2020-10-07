@@ -25,25 +25,28 @@ TBA
 TBA
 
 ## Development
-
-### Installing Dependencies
-
 From within the root directory:
 
+### 1) Install Dependencies
 ```sh
-TBA
+npm install
 ```
-### Seed Database:
 
+### 2) Seed Database:
 ```sh
 npm run seed
 ```
-### Start Server & Webpack:
 
+### 3) Run Webpack:
 ```sh
-npm start
 npx webpack
 ```
+
+### 4) Start Server:
+```sh
+npm start
+```
+
 ### Run Tests
 
 ```sh

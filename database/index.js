@@ -27,8 +27,8 @@ let Product = mongoose.model('Product', productSchema);
 let Seller = mongoose.model('Seller', sellerSchema);
 
 
-var getSeller = function(sellername, success) {
-  Seller.find({name: sellername})
+var getSeller = function(sellerID, success) {
+  Seller.find({_id: sellerID})
     .populate("products")
     .then((result) => {
       success(result)

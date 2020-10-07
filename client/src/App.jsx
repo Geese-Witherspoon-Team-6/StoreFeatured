@@ -9,17 +9,20 @@ import {Main, Background} from './Styles.jsx'
 const App = () => {
   const [data, setData] = useState({});
 
-  // const sellerIdentity = 'Mincing Mockingbird';
-  // let sellerIdentity = decodeURI(location.pathname).split('/')[1];
-  let sellerIdentity = 'Mincing Mockingbird';
+  let listingId = Number(location.pathname.split('/')[2]);
 
   const fetchData = async function() {
-    const result = await axios(`/api/seller/${sellerIdentity}`, {
-      params: {
-        sellID: sellerIdentity
-      }
-    });
-    setData(result.data[0])
+    try {
+      const result = await axios(`http://localhost:3004/api/listing/${listingId}`, {
+        params: {
+          itemId: listingId
+        }
+      });
+      setData(result.data[0])
+    }
+    catch (rejected) {
+      console.error(rejected)
+    }
   }
 
   useEffect(() => {
@@ -30,10 +33,22 @@ const App = () => {
     <Main>
       <Background />
       <div>
-        <Seller seller={data}/>
+        {
+          data === undefined ? (
+            <>Loading...</>
+          ) : (
+            <Seller seller={data}/>
+          )
+        }
       </div>
       <div>
-        <ProductList products={data.products}/>
+        {
+          data === undefined ? (
+            <>Loading...</>
+          ) : (
+            <ProductList products={data.products}/>
+          )
+        }
       </div>
     </Main>
   )
