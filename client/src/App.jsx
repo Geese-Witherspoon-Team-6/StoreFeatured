@@ -13,7 +13,7 @@ const App = () => {
 
   const fetchData = async function() {
     try {
-      const result = await axios(`http://localhost:3004/api/listing/${listingId}`, {
+      const result = await axios(`http://${location.hostname}:3004/api/listing/${listingId}`, {
         params: {
           itemId: listingId
         }

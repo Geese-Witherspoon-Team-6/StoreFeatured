@@ -2,50 +2,50 @@ var seedProducts = [
   {
     sellerId: [ 81290, 91220 ],
     imageUrl: 'tbd',
-    price: 973.21,
-    name: 'Fish'
+    price: 3.21,
+    name: 'Things Just Got Super Weird Magnet - Bird - Humor - Gift - Stocking Stuffer - Mincing Mockingbird'
   },
   {
     sellerId: [ 98924, 52647 ],
     imageUrl: 'tbd',
-    price: 590.6,
-    name: 'Hat'
+    price: 5.06,
+    name: 'Shenanigans Magnet - Bird - Humor - Gift - Mincing Mockingbird - Stocking Stuffer'
   },
   {
     sellerId: [ 858, 57855 ],
     imageUrl: 'tbd',
-    price: 439.53,
-    name: 'Chips'
+    price: 9.53,
+    name: 'Down to Clown Magnet - Bird - Humor - Gift - Stocking Stuffer - Mincing Mockingbird'
   },
   {
     sellerId: [ 24962, 44393 ],
     imageUrl: 'tbd',
-    price: 926.87,
-    name: 'Ball'
+    price: 6.87,
+    name: 'Evening Magnet - Bird - Humor - Gift - Stocking Stuffer - Mincing Mockingbird'
   },
   {
     sellerId: [ 50104, 94133 ],
     imageUrl: 'tbd',
-    price: 471.68,
-    name: 'Sausages'
+    price: 4.68,
+    name: 'Breakfast Burritos Magnet - Bird - Humor - Gift - Mincing Mockingbird - Stocking Stuffer'
   },
   {
     sellerId: [ 92108, 11116 ],
     imageUrl: 'tbd',
-    price: 669.01,
-    name: 'Chicken'
+    price: 6.01,
+    name: 'Modus Operandi Magnet - Bird - Cardinal - Humor - Gift - Stocking Stuffer - Mincing Mockingbird'
   },
   {
     sellerId: [ 80279, 23499 ],
     imageUrl: 'tbd',
     price: 5.55,
-    name: 'Bacon'
+    name: 'Meditate - Bird - Gift - Stocking Stuffer - Mincing Mockingbird'
   },
   {
     sellerId: [ 79376, 56375 ],
     imageUrl: 'tbd',
-    price: 951.68,
-    name: 'Gloves'
+    price: 9.68,
+    name: 'Crazy Magnet - Bird - Humor - Gift - Stocking Stuffer - Mincing Mockingbird'
   },
   {
     sellerId: [ 94978, 23243 ],

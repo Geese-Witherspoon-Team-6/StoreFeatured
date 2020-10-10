@@ -19,11 +19,11 @@ let sellerSchema = mongoose.Schema({
   createdAt: String,
   totalSales: Number,
   location: String,
-  products: [{type: Number, ref: 'Product'}]
+  products: [{type: Number, ref: 'ProductB'}]
 })
 
 // eslint-disable-next-line no-unused-vars
-let Product = mongoose.model('Product', productSchema);
+let ProductB = mongoose.model('ProductB', productSchema);
 let Seller = mongoose.model('Seller', sellerSchema);
 
 

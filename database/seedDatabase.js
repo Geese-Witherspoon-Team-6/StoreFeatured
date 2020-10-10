@@ -22,10 +22,10 @@ let sellerSchema = mongoose.Schema({
   createdAt: String,
   totalSales: Number,
   location: String,
-  products: [{type: Number, ref: 'Product'}]
+  products: [{type: Number, ref: 'ProductB'}]
 })
 
-let Product = mongoose.model('Product', productSchema);
+let ProductB = mongoose.model('ProductB', productSchema);
 let Seller = mongoose.model('Seller', sellerSchema);
 
 
@@ -34,7 +34,7 @@ var loadSeedData = function(closeDB) {
   var bird = 0;
   db.once('open', () => {
     _.map(seeds.seedProducts, (product) => {
-      let newProduct = new Product({
+      let newProduct = new ProductB({
         _id: iD,
         sellerId: iD,
         imageUrl: images.birds[bird],
